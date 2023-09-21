@@ -12,13 +12,8 @@ This Projects covers a lot of new carrier of my knowledge I learned
 <li>How to Navigate new page</li>
 <li>How to use fontawesome in flutter</li>
 </ul> 
-A new Flutter project.
+![image](https://github.com/Miirshe/BMI_Calculator/assets/126691024/2e3c0f40-6202-4e27-96c2-47097881db43)
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
 
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
