@@ -13,11 +13,3 @@ This Projects covers a lot of new carrier of my knowledge I learned
 <li>How to use fontawesome in flutter</li>
 </ul> 
 ![image](https://github.com/Miirshe/BMI_Calculator/assets/126691024/21181209-2b74-4104-847e-fa1f5be764ea)
-
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
