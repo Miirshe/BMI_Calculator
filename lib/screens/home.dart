@@ -1,8 +1,14 @@
+import 'dart:ffi';
+import 'dart:math';
 import 'package:bmi_calculator/constants.dart';
+import 'package:bmi_calculator/screens/result_screen.dart';
+import 'package:bmi_calculator/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:bmi_calculator/widgets/widgets.dart';
-
+enum Gender {
+  male , female
+}
 class HomeScreen extends StatefulWidget {
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -12,11 +18,18 @@ class _HomeScreenState extends State<HomeScreen> {
   double height_value = 180;
   int weight_value = 65;
   int age_value = 20;
+  Gender selectedGender = Gender.male;
+  void _goNextResultPage(){
+    double _result = weight_value/pow(height_value/100, 2);
+    Navigator.push(context, MaterialPageRoute(builder: (context){
+      return ResultScreen(result: _result,);
+    }));
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Color(0xff0a0e21),
+          backgroundColor: kActiveCardColour,
           title: Center(child: Text('BMI Calculators ')),
           centerTitle: true),
       body: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
@@ -25,6 +38,12 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             Expanded(
                 child: ResuableCard(
+                selected: selectedGender == Gender.male ? true : false,
+                onPressed: () {
+                  setState(() {
+                    selectedGender = Gender.male;
+                  });
+                },
               child: IconContent(
                 iconData: FontAwesomeIcons.mars,
                 title: 'MALE',
@@ -32,6 +51,12 @@ class _HomeScreenState extends State<HomeScreen> {
             )),
             Expanded(
                 child: ResuableCard(
+                  selected: selectedGender == Gender.female ? true : false,
+                  onPressed: () {
+                    setState(() {
+                      selectedGender = Gender.female;
+                    });
+                  },
               child: IconContent(
                 iconData: FontAwesomeIcons.venus,
                 title: 'FEMALE',
@@ -192,17 +217,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ))
           ],
         )),
-        RawMaterialButton(
-          onPressed: () => {},
-          child: Text(
-            'Calculate',
-            style: TextStyle(
-                fontSize: 23, fontWeight: FontWeight.w400, color: Colors.white),
-          ),
-          fillColor: kBottomContainerColour,
-          constraints:
-              BoxConstraints.tightFor(width: double.infinity, height: 60),
-        )
+        CustomButton(onPressed: _goNextResultPage, title: 'Calculate')
       ]),
     );
   }
