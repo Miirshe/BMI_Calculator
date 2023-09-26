@@ -7,15 +7,14 @@ class CustomButton extends StatelessWidget{
   CustomButton({required this.onPressed,required this.title});
   Widget build(BuildContext context){
     return  RawMaterialButton(
-          onPressed: () => onPressed,
+          onPressed: onPressed,
           child: Text(
             title,
             style: TextStyle(
                 fontSize: 23, fontWeight: FontWeight.w400, color: Colors.white),
           ),
           fillColor: kBottomContainerColour,
-          constraints:
-              BoxConstraints.tightFor(width: double.infinity, height: 60),
+          constraints:BoxConstraints.tightFor(width: double.infinity, height: 60),
         );
   }
 }

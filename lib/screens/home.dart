@@ -22,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void _goNextResultPage(){
     double _result = weight_value/pow(height_value/100, 2);
     Navigator.push(context, MaterialPageRoute(builder: (context){
-      return ResultScreen(result: _result,);
+      return ResultScreen(result : _result,);
     }));
   }
   @override
